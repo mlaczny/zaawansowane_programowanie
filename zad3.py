@@ -1,8 +1,31 @@
-def even_number(number) -> bool:
-    return number % 2 == 0
+class Property:
+    def __init__(self, area, rooms: int, price, address):
+        self.area = area
+        self.rooms = rooms
+        self.price = price
+        self.address = address
+    def __str__(self):
+        return f"Nieruchomość mająca {self.area} metrów i {self.rooms} pokoi. Kosztuję {self.price} zł i mieści się na " \
+               f"{self.address}"
 
+class House(Property):
+    def __init__(self, area, rooms, price, address, plot: int):
+        super().__init__(area, rooms, price, address)
+        self.plot = plot
+    def __str__(self):
+        return f"Dom mający {self.area} metrów i {self.rooms} pokoi. Kosztuję {self.price} zł i mieści się na " \
+               f"{self.address}, z {self.plot} działką"
 
-x = even_number(5)
-print("Liczba parzysta") if x else print("Liczba nieparzysta")
-y = even_number(4)
-print("Liczba parzysta") if y else print("Liczba nieparzysta")
+class Flat(Property):
+    def __init__(self, area, rooms, price, address, floor):
+        super().__init__(area, rooms, price, address)
+        self.floor = floor
+    def __str__(self):
+        return f"Mieszkanie mające {self.area} metrów i {self.rooms} pokoi. Kosztuję {self.price} zł i mieści się na " \
+               f"{self.address}, na {self.floor} piętrze"
+
+new_house = House(100, 4, 1000000, "Katowice, Południoa", 100)
+new_flat = Flat(70, 3, 500000, "Katowice, Sokolska", 10)
+
+print(new_house)
+print(new_flat)
