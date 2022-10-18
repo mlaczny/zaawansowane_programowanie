@@ -1,6 +1,6 @@
 import requests
 
-response = requests.get("https://api.openbrewerydb.org/breweries")
+response = requests.get("https://api.openbrewerydb.org/breweries?per_page=20")
 
 
 class Brawery:
