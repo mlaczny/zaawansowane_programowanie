@@ -1,7 +1,7 @@
-def print_names(names):
-    for n in names:
-        print(n)
+def print_data(name: str, surname: str):
+    hello = f"Cześć {name} {surname}!"
+    return hello
 
 
-names = ["Ania", "Hania", "Ala", "Basia", "Kasia"]
-print_names(names)
+hello = print_data("Aleksandra", "Nowak")
+print(hello)

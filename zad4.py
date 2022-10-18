@@ -1,6 +1,6 @@
-def every_second_element(numbers):
-    for n in range(0, 9, 2):
-        print(numbers[n])
+def checking_variables(x: int, y: int, z: int) -> bool:
+    return x + y == z
 
-numbers = [1,4,2,5,2,6,1,56,7,2]
-every_second_element(numbers)
+
+print(checking_variables(345, 38, 383))
+print(checking_variables(34354, 3438, 383))

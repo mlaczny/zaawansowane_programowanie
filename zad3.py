@@ -1,7 +1,8 @@
-def even_elements(numbers):
-    for n in range(10):
-        if numbers[n] % 2 == 0:
-            print(numbers[n])
+def even_number(number) -> bool:
+    return number % 2 == 0
 
-numbers = [1,4,2,5,2,6,1,56,7,2]
-even_elements(numbers)
+
+x = even_number(5)
+print("Liczba parzysta") if x else print("Liczba nieparzysta")
+y = even_number(4)
+print("Liczba parzysta") if y else print("Liczba nieparzysta")
