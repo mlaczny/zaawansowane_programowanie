@@ -26,7 +26,7 @@ class Brawery:
         self.created_at = created_at
 
     def __str__(self, *args):
-        return f'Brawery({self.id},{self.name},{self.brewery_type},{self.street},{self.address_2}, {self.address_3}, ' \
+        return f'Brawery({self.id} o nazwie {self.name},{self.brewery_type},{self.street},{self.address_2}, {self.address_3}, ' \
                f'{self.city}, {self.state},{self.county_province}, {self.postal_code},{self.country}, {self.longitude}, ' \
                f'{self.latitude}, {self.phone}, {self.website_url}, {self.updated_at})'
 
