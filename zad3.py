@@ -3,5 +3,5 @@ def even_elements(numbers):
         if numbers[n] % 2 == 0:
             print(numbers[n])
 
-numbers = [1,4,2,5,2,6,1,56,7,2]
+numbers = [1, 4, 2, 5, 2, 6, 1, 56, 7, 2]
 even_elements(numbers)
