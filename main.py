@@ -1,16 +1,23 @@
-# This is a sample Python script.
+# importing flask
+from flask import Flask, render_template
+import pandas as pd
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+app = Flask(__name__)
+
+# reading the data in the csv file
+df = pd.read_csv('zaawansowane_programowanie/movies.csv')
+df.to_csv('zaawansowane_programowanie/movies.csv', index=None)
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+# route to html page - "table"
+@app.route('/')
+@app.route('/table')
+def table():
+
+    # converting csv to html
+    data = pd.read_csv('zaawansowane_programowanie/movies.csv.csv')
+    return render_template('csv_table.html', tables=[data.to_html()], titles=[''])
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+if __name__ == "__main__":
+    app.run(host="localhost", port=int("5000"))
